@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosta Strona</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #333;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+    nav {
+      background: #555;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 1em;
+      text-decoration: none;
+      display: inline-block;
+    }
+    nav a:hover {
+      background: #777;
+    }
+    .tab {
+      display: none;
+      padding: 2em;
+    }
+    .tab.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Moja Prosta Strona</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showTab('tab1')">Zakładka 1</a>
+    <a href="#" onclick="showTab('tab2')">Zakładka 2</a>
+    <a href="#" onclick="showTab('tab3')">Zakładka 3</a>
+  </nav>
+
+  <main>
+    <div id="tab1" class="tab active">
+      <h2>Zakładka 1</h2>
+      <p>Tu wpiszesz własne treści.</p>
+    </div>
+    <div id="tab2" class="tab">
+      <h2>Zakładka 2</h2>
+      <p>Tu wpiszesz własne treści.</p>
+    </div>
+    <div id="tab3" class="tab">
+      <h2>Zakładka 3</h2>
+      <p>Tu wpiszesz własne treści.</p>
+    </div>
+  </main>
+
+  <script>
+    function showTab(id) {
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
